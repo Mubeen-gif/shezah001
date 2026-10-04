@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SEGZAH Foods & Restaurant</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  background:#080808;
+  color:#fff;
+  line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(5,5,5,.98);
+  border-bottom:1px solid #333;
+}
+
+.navbar{
+  max-width:1200px;
+  margin:auto;
+  min-height:75px;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  color:#d4af37;
+  font-size:27px;
+  font-weight:bold;
+  letter-spacing:4px;
+}
+
+.logo small{
+  display:block;
+  color:#fff;
+  font-size:10px;
+  letter-spacing:2px;
+  text-align:center;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin:0 10px;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:#d4af37;
+}
+
+.order-top{
+  background:#d4af37;
+  color:#111;
+  text-decoration:none;
+  padding:10px 15px;
+  border-radius:25px;
+  font-weight:bold;
+  font-size:12px;
+}
+
+.menu-toggle{
+  display:none;
+  color:#d4af37;
+  background:none;
+  border:1px solid #d4af37;
+  font-size:25px;
+  padding:3px 10px;
+  border-radius:5px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:650px;
+  display:flex;
+  align-items:center;
+
+  background:
+  linear-gradient(90deg,
+  rgba(0,0,0,.92),
+  rgba(0,0,0,.65),
+  rgba(0,0,0,.25)),
+  url("resturant.jpeg") center/cover no-repeat;
+}
+
+.hero-content{
+  max-width:1200px;
+  width:100%;
+  margin:auto;
+  padding:70px 25px;
+}
+
+.gold{
+  color:#d4af37;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.hero h1{
+  font-size:64px;
+  line-height:1.05;
+  margin:15px 0;
+}
+
+.hero h1 span{
+  color:#d4af37;
+}
+
+.hero p{
+  max-width:550px;
+  color:#ddd;
+  font-size:17px;
+}
+
+.buttons{
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+  margin:5px;
+}
+
+.gold-btn{
+  background:#d4af37;
+  color:#111;
+}
+
+.outline-btn{
+  border:1px solid #d4af37;
+  color:white;
+}
+
+/* SERVICES */
+
+.services{
+  background:#0d0d0d;
+  border-top:1px solid #333;
+  border-bottom:1px solid #333;
+}
+
+.service-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+}
+
+.service{
+  text-align:center;
+  padding:25px 10px;
+  border-right:1px solid #333;
+}
+
+.icon{
+  font-size:27px;
+  color:#d4af37;
+}
+
+.service h3{
+  font-size:14px;
+  margin:7px 0;
+}
+
+.service p{
+  color:#999;
+  font-size:11px;
+}
+
+/* SECTIONS */
+
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:75px 25px;
+}
+
+.heading{
+  margin-bottom:35px;
+}
+
+.heading h2{
+  font-size:38px;
+  margin-top:5px;
+}
+
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:center;
+}
+
+.about-text p{
+  color:#bbb;
+  margin:15px 0;
+}
+
+.about-image img{
+  width:100%;
+  height:350px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+/* MENU */
+
+.menu-area{
+  border-top:1px solid #222;
+}
+
+.categories{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+
+.category{
+  background:transparent;
+  border:1px solid #6d5815;
+  color:#fff;
+  padding:9px 16px;
+  border-radius:25px;
+  cursor:pointer;
+}
+
+.category:hover,
+.category.active{
+  background:#d4af37;
+  color:#111;
+}
+
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.food-card{
+  background:#101010;
+  border:1px solid #292929;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.food-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.food-info{
+  padding:17px;
+}
+
+.food-info h3{
+  color:#fff;
+  font-size:18px;
+}
+
+.food-info p{
+  color:#999;
+  font-size:13px;
+  margin:5px 0;
+}
+
+.price{
+  color:#d4af37;
+  font-weight:bold;
+  margin:8px 0;
+}
+
+.order-food{
+  display:inline-block;
+  background:#d4af37;
+  color:#111;
+  padding:8px 14px;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:12px;
+}
+
+/* WHATSAPP */
+
+.whatsapp-box{
+  margin-top:30px;
+  padding:20px;
+  border:1px solid #d4af37;
+  border-radius:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.whatsapp-box p{
+  color:#999;
+  font-size:13px;
+}
+
+.whatsapp{
+  background:#20c763;
+  color:#fff;
+  padding:12px 20px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* GALLERY */
+
+.gallery{
+  border-top:1px solid #222;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.gallery-grid img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:8px;
+  border:1px solid #333;
+}
+
+/* CONTACT */
+
+.contact{
+  border-top:1px solid #222;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+}
+
+.contact-info p{
+  color:#ccc;
+  margin:18px 0;
+}
+
+.contact-info strong{
+  color:#d4af37;
+}
+
+.map{
+  background:#151515;
+  border:1px solid #333;
+  border-radius:10px;
+  padding:35px;
+  text-align:center;
+}
+
+.map a{
+  color:#d4af37;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid #333;
+  text-align:center;
+  padding:30px;
+  color:#777;
+  font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  .navbar{
+    min-height:70px;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  nav{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#080808;
+    border-bottom:1px solid #333;
+    flex-direction:column;
+    padding:15px 0;
+  }
+
+  nav.show{
+    display:flex;
+  }
+
+  nav a{
+    width:100%;
+    text-align:center;
+    padding:13px;
+    margin:0;
+  }
+
+  .order-top{
+    display:none;
+  }
+
+  .hero{
+    min-height:620px;
+  }
+
+  .hero h1{
+    font-size:45px;
+  }
+
+  .service-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .service{
+    border-bottom:1px solid #333;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .menu-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:500px){
+
+  .logo{
+    font-size:22px;
+  }
+
+  .hero-content{
+    padding:55px 20px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  section{
+    padding:55px 18px;
+  }
+
+  .heading h2{
+    font-size:30px;
+  }
+
+  .service{
+    padding:20px 5px;
+  }
+
+  .service h3{
+    font-size:12px;
+  }
+
+  .service p{
+    font-size:10px;
+  }
+
+  .whatsapp-box{
+    display:block;
+    text-align:center;
+  }
+
+  .whatsapp{
+    display:inline-block;
+    margin-top:15px;
+  }
+
+  .gallery-grid img{
+    height:230px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+SEGZAH
+<small>FOODS & RESTAURANT</small>
+</div>
+
+<button class="menu-toggle" onclick="toggleMenu()">
+☰
+</button>
+
+<nav id="navMenu">
+
+<a href="#home" onclick="closeMenu()">Home</a>
+<a href="#about" onclick="closeMenu()">About</a>
+<a href="#services" onclick="closeMenu()">Services</a>
+<a href="#menu" onclick="closeMenu()">Menu</a>
+<a href="#gallery" onclick="closeMenu()">Gallery</a>
+<a href="#contact" onclick="closeMenu()">Contact</a>
+
+</nav>
+
+<a class="order-top"
+href="https://wa.me/2347033769746?text=Hello%20SEGZAH%2C%20I%20would%20like%20to%20place%20an%20order.">
+
+💬 Order on WhatsApp
+
+</a>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="gold">
+FOODS & RESTAURANT
+</div>
+
+<h1>
+Welcome to<br>
+<span>SEGZAH</span>
+</h1>
+
+<p>
+Delicious African and intercontinental dishes,
+fast food, snacks and pastries in a comfortable,
+family-friendly environment.
+</p>
+
+<div class="buttons">
+
+<a class="btn gold-btn"
+href="https://wa.me/2347033769746?text=Hello%20SEGZAH%2C%20I%20would%20like%20to%20place%20an%20order.">
+
+💬 Order on WhatsApp
+
+</a>
+
+<a class="btn outline-btn" href="#menu">
+Explore Menu →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<div class="services" id="services">
+
+<div class="service-grid">
+
+<div class="service">
+<div class="icon">🍽️</div>
+<h3>Dine-In</h3>
+<p>Comfortable restaurant dining.</p>
+</div>
+
+<div class="service">
+<div class="icon">🥡</div>
+<h3>Takeaway</h3>
+<p>Take your meals with you.</p>
+</div>
+
+<div class="service">
+<div class="icon">🛵</div>
+<h3>Delivery</h3>
+<p>Convenient food delivery.</p>
+</div>
+
+<div class="service">
+<div class="icon">👨‍👩‍👧</div>
+<h3>Family Friendly</h3>
+<p>Great for families and groups.</p>
+</div>
+
+<div class="service">
+<div class="icon">🎠</div>
+<h3>Kids' Playground</h3>
+<p>Fun space for children.</p>
+</div>
+
+<div class="service">
+<div class="icon">🏢</div>
+<h3>Events</h3>
+<p>Meetings and conferences.</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="about-grid">
+
+<div class="about-text">
+
+<div class="heading">
+
+<div class="gold">
+ABOUT SEGZAH
+</div>
+
+<h2>Good Food.<br>Great Vibes.</h2>
+
+</div>
+
+<p>
+SEGZAH Foods & Restaurant offers a casual dining
+experience with African and intercontinental dishes,
+fast food, fried chicken, snacks, pastries and
+vegetarian and vegan options.
+</p>
+
+<p>
+Open 24 hours daily, SEGZAH welcomes families,
+children, groups and individual guests.
+</p>
+
+<a class="btn outline-btn" href="#contact">
+Visit Us →
+</a>
+
+</div>
+
+<div class="about-image">
+
+<img src="resturant.jpeg"
+alt="SEGZAH restaurant">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section class="menu-area" id="menu">
+
+<div class="heading">
+
+<div class="gold">
+OUR MENU
+</div>
+
+<h2>Popular Dishes</h2>
+
+</div>
+
+
+<div class="categories">
+
+<button class="category active">All</button>
+<button class="category">Rice</button>
+<button class="category">Soups</button>
+<button class="category">Fast Food</button>
+<button class="category">Snacks</button>
+<button class="category">Vegetarian</button>
+
+</div>
+
+
+<div class="menu-grid">
+
+
+<!-- JOLLOF -->
+
+<div class="food-card">
+
+<img src="jellof.jpeg" alt="Jollof Rice">
+
+<div class="food-info">
+
+<h3>Jollof Rice</h3>
+
+<p>
+Classic Nigerian jollof rice served with chicken.
+</p>
+
+<div class="price">₦3,500*</div>
+
+<a class="order-food"
+href="https://wa.me/2347033769746?text=Hello%20SEGZAH%2C%20I%20would%20like%20to%20order%20Jollof%20Rice.">
+
+Order This
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- FRIED RICE -->
+
+<div class="food-card">
+
+<img src="fried.jpeg" alt="Fried Rice">
+
+<div class="food-info">
+
+<h3>Fried Rice</h3>
+
+<p>
+Fried rice with mixed vegetables and chicken.
+</p>
+
+<div class="price">₦3,500*</div>
+
+<a class="order-food"
+href="https://wa.me/2347033769746?text=Hello%20SEGZAH%2C%20I%20would%20like%20to%20order%20Fried%20Rice.">
+
+Order This
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- FRIED CHICKEN -->
+
+<div class="food-card">
+
+<img src="chicken.jpeg" alt="Fried Chicken">
+
+<div class="food-info">
+
+<h3>Fried Chicken</h3>
+
+<p>
+Crispy, well-seasoned fried chicken.
+</p>
+
+<div class="price">₦2,000*</div>
+
+<a class="order-food"
+href="https://wa.me/2347033769746?text=Hello%20SEGZAH%2C%20I%20would%20like%20to%20order%20Fried%20Chicken.">
+
+Order This
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- SOUP -->
+
+<div class="food-card">
+
+<img src="soup.jpeg" alt="Hot and Sour Soup">
+
+<div class="food-info">
+
+<h3>Hot & Sour Soup</h3>
+
+<p>
+A flavorful spicy soup option.
+</p>
+
+<div class="price">₦1,500*</div>
+
+<a class="order-food"
+  href="https://wa.me/2347033769746?text=Hello%20SEGZAH%2C%20I%20would%20like%20to%20order%20Hot%20and%20Sour%20Soup.">
+
+Order This
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- SNACKS -->
+
+<div class="food-card">
+
+<img src="snacks.jpeg" alt="Snacks and Pastries">
+
+<div class="food-info">
+
+<h3>Snacks & Pastries</h3>
+
+<p>
+Puff puff, samosa, rolls and pastries.
+</p>
+
+<div class="price">₦500+*</div>
+
+<a class="order-food"
+href="https://wa.me/2347033769746?text=Hello%20SEGZAH%2C%20I%20would%20like%20to%20order%20Snacks%20and%20Pastries.">
+
+Order This
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- VEGETARIAN -->
+
+<div class="food-card">
+
+<img src="drinks.jpeg" alt="Vegetarian Food">
+
+<div class="food-info">
+
+<h3>Vegetarian Options</h3>
+
+<p>
+Tasty meat-free meal options.
+</p>
+
+<div class="price">₦2,500+*</div>
+
+<a class="order-food"
+href="https://wa.me/2347033769746?text=Hello%20SEGZAH%2C%20I%20would%20like%20to%20order%20a%20Vegetarian%20meal.">
+
+Order This
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<p style="
+text-align:center;
+color:#777;
+font-size:12px;
+margin-top:20px;
+">
+
+*Demo prices only. Confirm actual prices with SEGZAH.
+
+</p>
+
+
+<div class="whatsapp-box">
+
+<div>
+
+<h3>💬 Order Directly on WhatsApp</h3>
+
+<p>
+Choose your meal and contact SEGZAH directly.
+</p>
+
+</div>
+
+<a class="whatsapp"
+href="https://wa.me/2347033769746?text=Hello%20SEGZAH%2C%20I%20would%20like%20to%20place%20an%20order.">
+
+Order Now
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+<div class="heading">
+
+<div class="gold">
+OUR GALLERY
+</div>
+
+<h2>A Taste of SEGZAH</h2>
+
+</div>
+
+<div class="gallery-grid">
+
+<img src="interior.jpeg"
+alt="SEGZAH restaurant interior">
+
+<img src="food.jpeg"
+alt="SEGZAH food">
+
+<img src="dish.jpeg"
+alt="SEGZAH dish">
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="heading">
+
+<div class="gold">
+GET IN TOUCH
+</div>
+
+<h2>Visit SEGZAH</h2>
+
+</div>
+
+
+<div class="contact-grid">
+
+<div class="contact-info">
+
+<p>
+<strong>📍 Address</strong><br>
+1 SEGZAH Street, off Dakwa Road,<br>
+Tafa LGA, Dakwa, Niger State
+</p>
+
+<p>
+<strong>🕐 Opening Hours</strong><br>
+Open 24 hours daily
+</p>
+
+<p>
+<strong>📞 Phone</strong><br>
+
+<a href="tel:+2347033769746"
+style="color:#d4af37;">
+
++234 703 376 9746
+
+</a>
+
+</p>
+
+<a class="btn gold-btn"
+href="https://wa.me/2347033769746?text=Hello%20SEGZAH%2C%20I%20would%20like%20to%20place%20an%20order.">
+
+💬 WhatsApp
+
+</a>
+
+</div>
+
+
+<div class="map">
+
+<h3>📍 Find SEGZAH</h3>
+
+<p style="color:#999;margin:15px 0;">
+
+1 SEGZAH Street,<br>
+off Dakwa Road,<br>
+Tafa LGA, Dakwa,<br>
+Niger State
+
+</p>
+
+<a href="https://www.google.com/maps/search/?api=1&query=1+SEGZAH+Street+off+Dakwa+Road+Tafa+LGA+Dakwa+Niger+State"
+target="_blank">
+
+Get Directions →
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>
+© 2026 SEGZAH Foods & Restaurant
+</p>
+
+<p>
+All rights reserved.
+</p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+  document
+  .getElementById("navMenu")
+  .classList
+  .toggle("show");
+
+}
+
+function closeMenu(){
+
+  document
+  .getElementById("navMenu")
+  .classList
+  .remove("show");
+
+}
+
+</script>
+
+</body>
+</html>
